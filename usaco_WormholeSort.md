@@ -14,7 +14,9 @@ swap 가능한 쌍은 총 m개가 주어진다. 그리고 항상 정렬이 가�
 
 ### constraint
 1 <= n <= 1e5
+
 1 <= m <= 1e5
+
 1 <= w <= 1e9
 
 ### solution
