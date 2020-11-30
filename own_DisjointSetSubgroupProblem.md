@@ -16,16 +16,16 @@ set group G2
 set A = {1, 2, 3, 4, 5, 6}
 set B = {7, 8, 9}    
 
-G1은 G2의 subgraph라고 할 수 있겠다.
+G1은 G2의 subgroup라고 할 수 있겠다.
 (비교되는 그룹들은, 동일한 original set을 분할했다고 가정한다.)
 ```
 ### solution 1
 가장 처음에 한 생각은 union-find로 해결해야겠다는 것이었다. 그리고 생각을 발전시킨 것에 대한 결과물을 소개한다. 1 ~ n 에 대해서, G1, G2 각각 parent array 를 적절히 만들어서, disjoint-set을 구현한다. 그리고 그 다음 아래처럼 동작한다.
 ```
 /* 
-G1 이 G2의 subgraph인지 판단하는 것이다.
-첫번째 반복문에서는, G1에서 i번 node가 G2와 동일한 set에 속하도록 만들어주는 것이다. 만약 subgraph가 아니라면, 이미 지나온 1 ~ i-1 까지의 parent가 적절하게 유지되지 않을것이다. 
-두번째 반복문에서는, 수정된 G1과 G2가 동일한지 파악한다. 동일하면, G1은 subgraph였던 것이다.
+G1 이 G2의 subgroup인지 판단하는 것이다.
+첫번째 반복문에서는, G1에서 i번 node가 G2와 동일한 set에 속하도록 만들어주는 것이다. 만약 subgroup가 아니라면, 이미 지나온 1 ~ i-1 까지의 parent가 적절하게 유지되지 않을것이다. 
+두번째 반복문에서는, 수정된 G1과 G2가 동일한지 파악한다. 동일하면, G1은 subgroup였던 것이다.
 
 for(int i = 1; i <= n; i++){
     int r1 = findG1(i);
@@ -45,7 +45,7 @@ else printf("G1 is not subgroup of G2\n");
 ```
 
 ### solution 2
-사실 이게 정답인거 같다. subgraph 의 수학적 정의가 무엇인지 생각해보았었다. 정의 = 솔루션 이었다.
+사실 이게 정답인거 같다. subgroup 의 수학적 정의가 무엇인지 생각해보았었다. 정의 = 솔루션 이었다.
 
 > G1 is subgroup of G2 := G1 에서 같은 set에 분류되어 있는 노드들은, G2에서도 같다. 
 
