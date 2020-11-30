@@ -46,9 +46,7 @@ else printf("G1 is not subgroup of G2\n");
 
 ### solution 2
 사실 이게 정답인거 같다. subgraph 의 수학적 정의가 무엇인지 생각해보았었다. 정의 = 솔루션 이었다.
-$$
-G1 is subgroup of G2 := G1 에서 같은 set에 분류되어 있는 노드들은, G2에서도 같다. 
-$$
+> G1 is subgroup of G2 := G1 에서 같은 set에 분류되어 있는 노드들은, G2에서도 같다. 
 정말 이게 다다. 이 글자를 보지 말고, 머릿속으로, subgroup 관계 에 있는 두개의 group을 생각해보라. 딱 이게 답이다. 이렇게 되면 구현도 정말 간단하다. g1[N], g2[N]이 각각 disjoint-set 을 나타낸다고 해보자. ( g1[i] = j <-> G1에서 i 번째 node는 j 라는 set에 속한다.)
 ```
 int ans = true;
